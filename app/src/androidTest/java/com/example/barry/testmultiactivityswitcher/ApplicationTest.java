@@ -1,11 +1,15 @@
 package com.example.barry.testmultiactivityswitcher;
 
 import android.app.Application;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.test.ApplicationTestCase;
 import android.widget.ImageView;
+
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import junit.framework.Assert;
 
@@ -21,7 +25,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         super(Application.class);
     }
 
-    public void testImageView() throws Exception {
+    public void testImageViewLoadsCorrectly() throws Exception {
         Graphics g = new Graphics(this.getContext());
 
         ImageView output = g.newImage(R.drawable.test);
@@ -41,6 +45,11 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
             throw new Exception("Null reference trying to compare image views");
         }
     }
+
+    public void testGoogleMapApi() throws Exception {
+        ApplicationInfo info = getContext().getPackageManager().getApplicationInfo("com.google.android.apps.maps", 0 );
+    }
+
     private static Bitmap getBitmapOfDrawable(Drawable drawable) {
         BitmapDrawable bd = (BitmapDrawable) drawable;
         Bitmap bitmap = bd.getBitmap();

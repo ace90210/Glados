@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TestMultiActivitySwitcher.iml" filepath="$PROJECT_DIR$/TestMultiActivitySwitcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Glados.iml" filepath="$PROJECT_DIR$/Glados.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

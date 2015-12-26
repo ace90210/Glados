@@ -18,8 +18,6 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.example.barry.testmultiactivityswitcher.R;
-
 
 /**
  * Handles the drawing to the Canvas(being displayed on android screen) with multiple elements
