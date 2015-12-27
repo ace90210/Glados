@@ -18,16 +18,26 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.widget.ImageView;
 
-
 /**
  * Handles the drawing to the Canvas(being displayed on android screen) with multiple elements
  * such as text, shapes and images.
+ *
+ * @since	v1.0.0-alpha+20151204
  */
 public class Graphics {
+	/**
+	 * @since	v1.0.0-alpha+20151204
+	 */
 	private static final String TAG = "AndroidGraphics";
 
+	/**
+	 * @since	v1.0.0-alpha+20151204
+	 */
     private Context context;
 
+	/**
+	 * @since	v1.0.0-alpha+20151204
+	 */
     public Graphics(Context context) {
         this.context = context;
     }
@@ -37,6 +47,7 @@ public class Graphics {
 	 * @param resourceId The filename of the image asset to be loaded
 	 * @return An ImageView object for the image
 	 * @exception RuntimeException
+	 * @since	v1.0.0-alpha+20151204
 	 */
     public ImageView newImage(int resourceId) {
         ImageView view = new ImageView(context);

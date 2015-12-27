@@ -36,13 +36,36 @@ import uk.ac.uea.nostromo.mother.Screen;
  * @see FileIO
  * @see Screen
  * @see WakeLock
+ * @since	v1.0.0-alpha+20151204
  */
 public abstract class AndroidGame extends AppCompatActivity implements Game {
+	/**
+	 * @since	v1.0.0-alpha+20151204
+	 */
     Graphics graphics;
+
+	/**
+	 * @since	v1.0.0-alpha+20151204
+	 */
     Audio audio;
+
+	/**
+	 * @since	v1.0.0-alpha+20151204
+	 */
     FileIO fileIO;
+
+	/**
+	 * @since	v1.0.0-alpha+20151204
+	 */
     Screen screen;
-    WakeLock wakeLock;
+
+	/**
+	 * @since	v1.0.0-alpha+20151204
+	 */
+    WakeLock wakeLock;    
+	/**
+	 * @since	v1.0.0-alpha+20151204
+	 */
     protected TableLayout rootLayout;
 
 	/**
@@ -51,6 +74,7 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 	 * the file input and output handler, audio handler, user input handler and the main screen.
 	 * Enables the wakelock to disable android locking the screen while the app is active.
 	 * @param	savedInstanceState	{@inheritDoc}
+	 * @since	v1.0.0-alpha+20151204
 	 */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +98,8 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 
 	/**
 	 * Resumes the main games screen, renderer and applies the wakelock.
+	 *
+	 * @since	v1.0.0-alpha+20151204
 	 */
     @Override
     public void onResume() {
@@ -87,6 +113,8 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 	 * Pauses the game screen, renderer and releases the wakelock.
 	 *
 	 * If activity is closing the screen is disposed.
+	 *
+	 * @since	v1.0.0-alpha+20151204
 	 */
     @Override
     public void onPause() {
@@ -102,6 +130,7 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 	/**
 	 * Get handle to the current file input/output handler.
 	 * @return An FileIO object for the games file input/output handler.
+	 * @since	v1.0.0-alpha+20151204
 	 */
     @Override
     public FileIO getFileIO() {
@@ -111,6 +140,7 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 	/**
 	 * Get handle to the current graphics object.
 	 * @return An Graphics object for the game.
+	 * @since	v1.0.0-alpha+20151204
 	 */
     @Override
     public Graphics getGraphics() {
@@ -120,6 +150,7 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 	/**
 	 * Get handle to the current audio handler.
 	 * @return An Audio object for the games audio handler.
+	 * @since	v1.0.0-alpha+20151204
 	 */
     @Override
     public Audio getAudio() {
@@ -129,6 +160,7 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 	/**
 	 * Sets the games screen to the specified screen.
 	 * @param screen The new screen to be applied to the game environment.
+	 * @since	v1.0.0-alpha+20151204
 	 */
     @Override
     public void setScreen(Screen screen) {
@@ -155,6 +187,7 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 	/**
 	 * Get handle to the current games screen.
 	 * @return A Screen object for the games screen.
+	 * @since	v1.0.0-alpha+20151204
 	 */
     public Screen getCurrentScreen() {
         return screen;
@@ -164,6 +197,7 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
     /**
      * Get handle to the current root table layout.
      * @return The root table layout instance.
+     * @since	v1.0.0-alpha+20151204
      */
     @Override
     public TableLayout getRootTableLayout(){
