@@ -39,6 +39,8 @@ import uk.ac.uea.nostromo.mother.Screen;
  * @since	v1.0.0-alpha+20151204
  */
 public abstract class AndroidGame extends AppCompatActivity implements Game {
+    int mainTableLayout;
+
 	/**
 	 * @since	v1.0.0-alpha+20151204
 	 */
@@ -76,8 +78,8 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 	 * @param	savedInstanceState	{@inheritDoc}
 	 * @since	v1.0.0-alpha+20151204
 	 */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState, int mainActivity, int mainTableLayout) {
+        this.mainTableLayout = mainTableLayout;
         super.onCreate(savedInstanceState);
 
         fileIO = new AndroidFileIO(this);
@@ -87,9 +89,9 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        setContentView(R.layout.activity_main);
+        setContentView(mainActivity);
 
-        rootLayout = (TableLayout) findViewById(R.id.table_layout);
+        rootLayout = (TableLayout) findViewById(mainTableLayout);
 
         TableLayout screenLayout = screen.getTableLayout();
 
@@ -144,6 +146,9 @@ public abstract class AndroidGame extends AppCompatActivity implements Game {
 	 */
     @Override
     public Graphics getGraphics() {
+        if(graphics == null){
+            graphics = new Graphics(this);
+        }
         return graphics;
     }
 
